@@ -45,3 +45,42 @@ const myFunction = function(){
 }
 console.log(typeof myFunction);//function(object function)
 
+
+
+
+
+
+
+
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+//Stack (Primitive), Heap(Non-Primitive)
+
+
+//primitive => copy of the value store in the stack
+let myYoutubeName = "ptitimukherjeeDotCom"
+
+let anothername = myYoutubeName
+anothername = "chaiaurcode"
+
+console.log(myYoutubeName); //pritimukherjeeDotCom
+console.log(anothername); //chaiaurcode
+
+
+
+
+//Non-primititive => changes made in the object are get reflect in both as two objects is pointing to the same address of the memory in the heap
+let userOne = {
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "priti@google.com"
+
+console.log(userOne.email) //priti@google.com
+console.log(userTwo.email) //priti@google.com
