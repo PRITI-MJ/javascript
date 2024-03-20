@@ -9,8 +9,8 @@ const user = {
     }
 }
  
-//here this in node js this refers to {} (empty object)
-//but in browser this refers to window object
+//here this in node js, the global execution context refers to {} (empty object)
+//but in browser, the global execution object refers to window object
 console.log(this);{}
 
 
