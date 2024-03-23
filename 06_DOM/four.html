@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+      <ul class="language">
+        <li>Javascript</li>
+      </ul>  
+</body>
+<script>
+    function addLanguage(langName)
+    {
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`;
+        document.querySelector('.language').appendChild(li);
+    }
+
+    addLanguage("python");
+    addLanguage("typescript");
+
+
+    //making function to add language in a optimized way => i.e, we use createTextNode
+    //it is because when we want to add a new element, in innerHTML, it have to tranverse the whole list to add a new element
+    //but in createTextNode it don't have traverse, so it is a optimized method
+
+    function addOptiLanguage(langName)
+    {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptiLanguage('golang');
+
+
+    //edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    //secondLang.innerHTML = "Mojo"
+    const newLi = document.createElement('li')
+    newLi.textContent = "MOJO"
+    secondLang.replaceWith(newLi);
+
+
+    //edit
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = '<li>Typescript</li>'
+
+    //remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove();
+</script>
+</html>
