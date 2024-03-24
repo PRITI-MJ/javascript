@@ -1,0 +1,20 @@
+//async code
+
+Javascript => 1. synchronus(code executed one by one)
+              2. Single Threaded 
+
+Execution Context => Execute one line of code at a time
+like:-
+console log 1
+console log 2
+ 
+Here, each operation waits for the last one to complete before executing
+
+
+
+Blocking code vs Non-Blocking code
+
+Blocking code => Block the flow of program => Read File synchronus
+
+Non-Blocking code => Does not block execution => Read file async
+
