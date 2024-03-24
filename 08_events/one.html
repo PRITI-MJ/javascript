@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = (() => 
+    // alert ("owl clicked!")
+    // )
+
+    //attachEvent()
+    //jQuery - on
+
+    document.getElementById('owl').addEventListener('click', (e) => {
+    //alert("owl clicked again")
+    console.log(e); //we get information about time-stamp, where the mouse has clicked, etc
+    //type => keyboard events, mouse events, timestamp, defaultPrevented
+    //target, toElement, srcElement, currentTarget
+    //clientX, clientY, screenX, screenY
+    //allkey, ctrlkey, shiftkey, keyCode
+
+
+    
+    //event propogation(false or true) => 2 types => event bulbling & event capturing
+    //EVENT BUBLING => when it is false for both the events then first inner event get executed and then the outer one
+    //EVENT CAPTURING => when it is true for both the events then first outer event get executed and then the inner one
+    //e.stopPropagation(); //it will stop propation (bubling and capturing)
+
+   console.log("owl clicked");
+    }, false);
+
+    document.getElementById('images').addEventListener('click',(e) => {
+        console.log("clicked inside the ul")
+    }, false);
+
+
+    document.getElementById('google').addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log("google clicked");
+    //e.stopPropagation();
+    }, false)
+
+    document.querySelector('#images').addEventListener('click', (e) => {
+        console.log(e.target.parentNode);
+        if(e.target.tagName == 'IMG')
+        {
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode
+            removeIt.remove(e.target);
+            //removeIt.parentNode.removeChild(removeIt);
+        }
+       
+        
+    }
+    )
+
+
+</script>
+</html>
