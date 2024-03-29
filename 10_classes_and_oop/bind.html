@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            //requirement => after the page is being loaded then object of React is being created
+            //after this we should get the reference of the button => method f handle clicked which will print message that form is created
+
+
+            document.querySelector('button')
+            .addEventListener('click', this.handleClick.bind(this));
+        }
+
+        handleClick(){
+            console.log("button clicked");
+            console.log(this.server);
+        }
+    }
+    //creating React object
+    const app = new React()
+</script>
+</html>
